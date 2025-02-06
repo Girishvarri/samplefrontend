@@ -9,7 +9,7 @@ export default function Signup() {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    const api = 'http://localhost:5544/api/add-user'
+    const api = 'http://localhost:5000/api/add-user'
         axios.post(api,data).then((response) => {
             if(response.status === 201){
               alert("Registered successfully.")
