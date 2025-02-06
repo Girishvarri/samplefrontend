@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 export default function List() {
   const [data, setData] = useState([]);
   useEffect(()=>{
-    const api = 'http://localhost:5000/api/get-users'
+    const api = 'https://samplebackend-h3xa.onrender.com/api/get-users'
     axios.get(api).then((res)=>{
       setData(res.data.users)
     })
   },[])
 
   const handelDelete = (id) => {
-      const api = 'http://localhost:5000/api/delete-user/'+id
+      const api = 'https://samplebackend-h3xa.onrender.com/api/delete-user/'+id
         axios.delete(api).then((response) => {
             if(response.status === 200){
                 alert("Deleted successfully.")

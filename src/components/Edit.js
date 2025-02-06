@@ -14,7 +14,7 @@ export default function Edit() {
 
   
   useEffect(() => {
-    let api = 'http://localhost:5544/api/get-single-user/'+edit_userid
+    let api = 'https://samplebackend-h3xa.onrender.com/api/get-single-user/'+edit_userid
       axios.get(api).then((response) => {
           setData(response.data.response);            
       });
@@ -23,7 +23,7 @@ export default function Edit() {
 
   const handleUpdate = (event) => {
     event.preventDefault();
-    const api = 'http://localhost:5544/api/update-user/'+edit_userid
+    const api = 'https://samplebackend-h3xa.onrender.com/api/update-user/'+edit_userid
         axios.put(api,data).then((response) => {
             if(response.status === 200){
               alert("Updated successfully.")
